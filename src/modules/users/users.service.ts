@@ -11,9 +11,9 @@ import { UserDto } from "./dto/user.dto";
 export class UserService {
 
     private supabase: SupabaseClient;
-    constructor(private readonly supbaseService: SupabaseService){
-        if(this.supbaseService) {
-            this.supabase = supbaseService.connection();
+    constructor(private readonly supabaseService: SupabaseService){
+        if(this.supabaseService) {
+            this.supabase = supabaseService.connection();
         }
         else console.log('connect supabase failed');
       

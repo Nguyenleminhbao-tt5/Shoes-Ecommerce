@@ -3,37 +3,72 @@ import { UserService } from "./users.service";
 import { UserDto } from "./dto/user.dto";
 import { AuthenticationGuard } from "../auth/guard/auth.guard";
 
-
+@UseGuards(AuthenticationGuard)
 @Controller('/api/v1/users')
 export class UserController {
     constructor(private readonly userService: UserService){
     }
 
     // get user_id from authen : @Req() request: Request, request.user_id
-    @UseGuards(AuthenticationGuard)
+    
     @Get()
     async getAllUsers(){
-        return await  this.userService.getAllUsers();
+        try{
+            const response = await  this.userService.getAllUsers();
+            return  response;
+        }
+        catch(err){
+            throw err;
+        }
+       
     }
 
     @Post()
     async createUser(@Body() newUser: UserDto ){
-        return await this.userService.createUser(newUser);
+        try{
+            const response = await this.userService.createUser(newUser);
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+       
     }
 
     @Get(':id')
     async showUser(@Param('id') user_id: string){
-        return this.userService.showUser(user_id);
+        try{
+            const response = await this.userService.showUser(user_id);
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+        
     }
 
     @Put(':id')
     async updateUser(@Param('id') user_id: string, @Body() editUser: UserDto){
-        return this.userService.updateUser(user_id, editUser);
+        try{
+            const response = await this.userService.updateUser(user_id, editUser);
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+       
     }
 
     @Delete(':id')
     async deleteUser(@Param('id') user_id: string){
-        return this.userService.deleteUser(user_id);
+        try{
+            const response = await this.userService.deleteUser(user_id);
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+       
     }
 
     
