@@ -1,15 +1,31 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/main.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/main.js"
-      }
-    ]
-  }
+  "version": 2,
+  "env": {
+    "D0MAIN_APP": "shoes-ecommerce-nine.vercel.app",
+    "SUPABASE_URL": "https://yxmdvighzadjwclbpesi.supabase.co",
+    "SUPABASE_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4bWR2aWdoemFkandjbGJwZXNpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNDk4NDE1MCwiZXhwIjoyMDIwNTYwMTUwfQ.i4Kr-zV5YMfnpAodttW06NLIeT7mRLDmJ0Op-9_voQk",
+    "GOOGLE_CLIENT_ID": "615301588543-kpbbsblmlak1ro0tm5bpda64l3vva0b1.apps.googleusercontent.com",
+    "GOOGLE_CLIENT_SECRET": "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",
+    "SECRET_JWT": "mysecret",
+    "CLOUDINARY_API_KEY": "549695228267364",
+    "CLOUDINARY_API_SECRET": "Q8ksXeJe_kNaVpAEeJLkjYkZobQ"
+  },
+  "builds": [
+    {
+      "src": "dist/main.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ]
+    }
+  ]
+}
