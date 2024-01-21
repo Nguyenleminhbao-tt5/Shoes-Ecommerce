@@ -1,13 +1,16 @@
 import { Module } from "@nestjs/common";
-import { PaymentsController } from "./payments.controller";
 import { PaymentService } from "./payments.service";
+import { SupabaseModule } from "@/database/supabase.module";
+import { PaymentController } from "./payments.controller";
 
 
 
 
 
 @Module({
-    controllers:[PaymentsController],
-    providers: [PaymentService]
+    imports: [SupabaseModule],
+    controllers: [PaymentController],
+    providers: [PaymentService],
+    exports: [PaymentService]
 })
 export class PaymentModule {}

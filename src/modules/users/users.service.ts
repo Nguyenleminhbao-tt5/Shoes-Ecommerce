@@ -109,6 +109,8 @@ export class UserService {
                 .select('*')
                 .eq('id', user_id)
                 .single()
+
+            delete data.password;
             if(data) {
                 return {
                     code: HttpStatus.OK,

@@ -8,6 +8,7 @@ import { SupabaseModule } from '@/database/supabase.module';
     imports: [SupabaseModule],
     controllers:[UserController],
     providers:[UserService, LoggerService],
+    exports: [UserService]
 
 })
 export class UsersModule {}
