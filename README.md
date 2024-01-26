@@ -27,7 +27,7 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Document API 
-[POSTMAIN](https://documenter.getpostman.com/view/23216504/2s9YypFiRc) documentation
+[POSTMAIN](https://documenter.getpostman.com/view/23216504/2s9YypFiRc) link to postman documentation
 
 ## Running the app
 
