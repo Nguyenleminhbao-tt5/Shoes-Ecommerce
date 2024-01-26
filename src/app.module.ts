@@ -9,6 +9,7 @@ import {
   OrderModule,
   PaymentModule
 } from './modules';
+import { AppControler } from './app.controller';
 
 
 @Module({
@@ -22,7 +23,7 @@ import {
     PaymentModule,
     ConfigModule.forRoot(),
   ],
-  controllers: [],
+  controllers: [AppControler],
   providers: [],
 })
 export class AppModule {}
